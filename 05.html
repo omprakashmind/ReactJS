@@ -1,0 +1,65 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <style>
+      .box {
+        border: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      .box--large {
+        width: 270px;
+        height: 270px;
+      }
+      .box--medium {
+        width: 180px;
+        height: 180px;
+      }
+      .box--small {
+        width: 90px;
+        height: 90px;
+      }
+    </style>
+    <script type="text/babel">
+        // 🐨 Step 1: Assign "className" and "style" props to div
+        function Box(props) {
+            console.log(props)
+            return (
+                <div className={props.abc} style={props.xyz}>
+                    {props.children}
+                  <p>{props.id}</p>   
+                
+                </div>
+            )
+        }
+
+        const onj = {
+            backgroundColor: 'pink'
+        }
+  
+        const element = (
+            <div>
+            {/* 🐨 Step 2: Assign class .box and box--small and background color to lightblue in style*/}
+                
+            <Box abc=".box .box--small" xyz={onj} id="Hello World">
+                small lightblue box
+            </Box>
+            {/* 🐨 Step 3: Assign class .box and box--medium and background color to pink in style*/}
+            <Box abc=".box .box-medium" xyz={{backgroundColor:'pink'}}>
+                medium pink box
+            </Box >
+            {/* 🐨 Step 4: Assign class .box and box--large and background color to orange in style*/}
+            <Box abc=".box box--large" xyz={{backgroundColor:'orange'}}>
+                large orange box
+            </Box>
+            <Box     >sizeless box</Box>
+            </div>
+        )
+  
+        ReactDOM.render(element, document.getElementById('root'))
+    </script>
+</body>

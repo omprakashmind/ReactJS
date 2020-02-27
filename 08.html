@@ -1,0 +1,81 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+  
+    /*    function App() {
+            // 🐨 Step 1: add some state (with React.useState)
+           const [arr, setFirstState] = React.useState([])
+            
+           // const arr=['rohan','sohan','Abhishek','Ankit']
+            
+            // 🐨 Step 2: Add onSubmit function to take value from input
+            // and update state.
+            // don't forget to use `event.preventDefault()` to avoid default behaviour
+            // use `event.target.elements[0].value` to get value from input
+    
+            function handleOnSubmit(event){
+                event.preventDefault()
+                setFirstState([...arr, event.target.elements[0].value])
+            }
+            
+            return (
+                <div>
+                       
+                    <form  onSubmit={handleOnSubmit}>
+                        <div >
+                            <input  type="text"/>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                    
+                    
+                    <ol className="list-group">
+                    {arr.map((item, index) => (
+                        <li className="list-group-item" key={index}>{item}</li>
+                    ))}
+                    </ol>
+                </div>
+            )
+        }*/
+
+       class App extends React.Component{
+           constructor(props){
+               super();
+               this.state={date:new Date()};
+           }
+       componentDidMount(){
+           this.timerID=setInterval(
+           ()=>this.tick(),
+               1000);
+       }    
+           
+       componentWillUnmount(){
+           clearInterval(this.timerID); 
+          
+      }
+      
+      tick(){
+          this.setState({date:new Date()
+        })
+      }
+           
+           
+     render(){
+               return(
+                <div>
+                       <h1>Hello World</h1>
+                       <h3>It is {this.state.date.toLocaleTimeString()}</h3>
+               </div>          
+               )
+           }
+       }
+
+
+    
+        ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+</body>
+

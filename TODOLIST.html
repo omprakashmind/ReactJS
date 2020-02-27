@@ -1,0 +1,182 @@
+<body>
+    <div id="root"></div>
+    <style>
+    .main{
+        width:600px;
+        margin: 0 auto;
+        text-align: center;
+        
+     }
+        html,body{
+            margin-top: 150px;
+            color: black;
+            background: grey;
+        }
+    
+        .content{
+            padding:20px;
+            text-align: center;
+        }
+        .list-group-item{
+            list-style: none;
+            font-size: 25;
+            text-align: center;
+            border:2px solid black;
+            background-color: steelblue;
+        }
+        li:hover{
+           background-color: #F5F5F5;
+            
+        }
+        .todolist{
+            margin-bottom: 50px;
+            font-family: cursive;
+            font-size: 25px;
+            text-decoration: underline;
+        }
+        .text2{
+            padding: 20px 50px 0 40px;  
+        }
+        .box{
+            border: 5px blue;
+            
+        }
+        
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+
+{/*  class App extends React.Component{
+      constructor(props){
+          super(props);
+          this.state={
+                 items:[],
+            currentItem:{
+              text:'',
+              key:''
+            }
+        }
+          this.handleInput=this.handleInput.bind(this)  
+          this.addItem=this.addItem.bind(this)
+      }
+
+     handleInput(e){
+         this.setState({
+             currentItem:{
+                 text:e.target.value,
+                 key:Date.now()
+             }
+         })
+     }
+    
+    addItem(e){-=
+        
+        e.preventDefault();
+        const newItem=this.state.currentItem;
+     //   console.log(newItem)
+        if(newItem.text!=="")
+            {
+                const items=[...this.state.items,newItems];
+            }
+    }
+       
+    deleteItem(e){
+        e.preventDefault();
+    }   
+        render(){
+      return(
+        <div> 
+          <form onSubmit={this.addItem}>
+              <div>
+                  <input type="text" value={this.state.currentItem.text} onChange={this.handleInput}></input>
+              </div> 
+              
+               <button type="submit">Submit</button>
+          </form> 
+              
+        <form onSubmit={this.deleteItem}>
+            <div>
+               <button type="submit">DELETE</button>
+        
+            </div>    
+        
+        </form>      
+              
+             
+              
+        </div>    
+         )
+      }
+   }*/}
+
+
+function App(){
+    const [val,setValue]=React.useState([]);
+    const [val2,setValue2]=React.useState([]);
+    
+          function handleSubmit(e){
+                e.preventDefault();
+                
+                  setValue([...val,e.target.elements[0].value]); 
+            //  console.log(e.target.element[0].value);
+                document.getElementById("reset-form").reset();
+                  
+             }
+    
+            const completed= (index)=>{
+              
+            const updatedVal = [...val];
+            var val3=updatedVal[index];    
+            
+            updatedVal.splice(index, 1);
+            setValue(updatedVal);
+            setValue2([...val2,val3]);   
+                
+                    } 
+            
+            const remove=(index)=>{
+                const updatedVal=[...val];
+                updatedVal.splice(index,1);
+                setValue(updatedVal);
+            }
+            
+     return(
+               <div className="main">
+                    <div className="todolist">TO DO LIST</div>
+                          <form onSubmit={handleSubmit} id="reset-form">
+                       <div>
+                           <input type="text" id="val3" required="required" placeholder="TASK TO BE PERFORMED" className="text2"/>
+                              
+                       </div>
+                              <br/>
+                           <button type="submit"  id="btn1">SUBMIT</button>
+                          
+                          </form>
+            
+                          {val.map((item, index) => (
+                             <div><li className="list-group-item " key={index}>{item}</li><button className="material-icons" onClick={(event)=>{remove(index)}}>delete</button><button className="material-icons" onClick={(event)=>{completed(index)}}>done</button></div>
+                                   
+                          ))}
+             
+             
+                          <div>
+                          <hr/> <div>Completed task</div><br/>
+                           {val2.map((item, index) => (
+                               <li className="list-group-item " key={index}>{item}<i className="material-icons">check_circle_outline</i></li>   
+                          ))}
+        
+                          </div>
+             
+                     
+              </div>
+        )
+}
+
+ReactDOM.render(<App/>,document.getElementById('root'))
+
+</script>
+
+</body>

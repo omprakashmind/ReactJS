@@ -1,0 +1,55 @@
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+        function Sum() {
+            // 🐨 Step 1: add some state (with React.useState)
+            const [firstInput,setStateFirst]=React.useState(0)
+            const [SecondInput,setStateSecond]=React.useState(0)
+
+            // 🐨 Step 2: create a `handleChange` function that accepts the change `event` and
+            // uses `event.target.value` to get the value of the input
+            // 💰 remember this event will be triggered on the input, not the form 
+            
+        //    const handleChangeFirst=event=>setStateFirst(event.target.value)
+            
+            function handleChangeFirst(event){
+                event.preventDefault();
+                setStateFirst(event.target.value)
+            }
+            
+            function handleChangeSecond(event){
+                event.preventDefault();
+                setStateSecond(event.target.value)
+            }   
+            
+          //  const handleChangeSecond=event=>setStateSecond(event.target.value)
+            
+         //   const sum = (a, b) => parseInt(a) + parseInt(b)
+            
+            
+            
+            function sum(a,b){
+                let val=parseInt(a)+parseInt(b)
+                return val
+            }
+            
+            return (
+            <div>
+                    
+                    <div><input type="number" id="firstInput" onChange={handleChangeFirst} /></div>
+                    
+                    <div><input type="number" id="secondInput" onChange={handleChangeSecond} /></div>
+                    
+                    <button>{ sum(firstInput,SecondInput) }</button>
+
+                    
+            </div>
+            )
+        }
+    
+        ReactDOM.render(<Sum />, document.getElementById('root'))
+    </script>
+</body>

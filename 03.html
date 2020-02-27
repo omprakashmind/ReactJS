@@ -1,0 +1,33 @@
+<body>
+    <div id='root'></div>
+
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    
+    
+    <!-- 🐨 Step 2: on the script tag above, change `type="text/javascript"`
+       to `type="text/babel"` so babel will compile this code for the browser to run. -->
+    <script type='text/babel'>
+
+        // 🐨 Step 3: re-implement this using JSX!
+     //   const element = <button id='greeting' className='container'>Hello World</h1>
+       function consoleStart(){
+           console.log("Hello World");
+       }
+        
+       const element=<button onClick={consoleStart}>Started</button>
+
+
+
+        // 🐨 Step 3: Render React element using ReactDOM.
+    
+        ReactDOM.render(element, document.getElementById('root'))
+
+        // PS: Javascript inside JSX
+    </script>
+    
+    
+    
+</body>

@@ -1,0 +1,50 @@
+<body>
+    <div id='root'></div>
+
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    
+    <script type='text/babel'>
+        // 🐨 Step 1: Create custom function component
+          function Number(props){
+              console.log(props)
+              return(
+                <div>
+                      Hello World
+                      {props.title}
+                      
+                 </div>    
+              )
+          }
+
+        // 🐨 Step 2: Use custom component to show message
+     //   const element = <Number title="react" value1="java"/>
+             
+              
+
+        // 🐨 Step 3: Create custom class component
+        
+
+        // PS: Composing component, create App component
+        class App extends React.Component{
+             render(){
+                 console.log(this.props);
+                 return(
+                    <div>
+                         
+                   Html and JAvascript
+                    <p>{this.props.value1}</p>
+                    <p>{this.props.value2}</p>
+                 </div>
+                 )
+             }
+        }
+
+
+      const element=<App value1="html" value2="jvascript"/> 
+
+       ReactDOM.render(element, document.getElementById('root'))
+
+    </script>
+</body>

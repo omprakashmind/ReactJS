@@ -1,0 +1,31 @@
+<!DOCTYPEhtml>
+<html>
+    
+<head>
+    
+    
+</head>      
+<body>
+  
+    
+    <div id='root'></div>
+
+  
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    
+    <script type='text/javascript'>
+        const rootElement = document.getElementById('root');
+
+        // 🐨 Step 2: Replace document.createElement by React.createElement
+        const element = React.createElement('h1', { className:'container', children:"sanjeev" });
+
+        // 🐨 Step 3: Render React element using ReactDOM.render
+        ReactDOM.render(element, rootElement);
+    </script>
+</body>
+    
+    
+    
+</html>    
+
