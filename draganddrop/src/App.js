@@ -202,7 +202,7 @@ class App extends React.Component {
 
       return (
 
-        <div key={index} value={index} ><p className="list-group-item">{item}<button style={{float:"right"}} onClick={() => this.showList(item)} id="btn1"><input type="checkbox" checked={this.checkedStatus()} /><i className="fa fa-folder-open" aria-hidden="true"></i></button><button className="btn1" onClick={() => this.deleteObjectList(item)}>DELETE</button></p></div>
+        <div key={index} value={index} ><p className="list-group-item">{item}<button style={{float:"right"}} onClick={() => this.showList(item)} id="btn1"><input type="checkbox" checked={this.checkedStatus()} /><i className="fa fa-folder-open" aria-hidden="true"></i></button><button className="btn1" onClick={() => this.deleteObjectList(item)}><i class="fa fa-trash" aria-hidden="true"></i></button></p></div>
      
         )
 
