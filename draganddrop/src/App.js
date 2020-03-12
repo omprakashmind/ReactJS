@@ -193,45 +193,45 @@ class App extends React.Component {
 
   }
 
+  checkedAndUncheckedAll=()=>{
+    let val=this.state.taskToBeDone;
+    console.log(val)
+    
+    
+
+  }
 
 
   render() {
    
-
     const showTasks=()=> Object.keys(this.state.tasksContainer).map(function (item, index) {
 
       return (
-
-        <div key={index} value={index} ><p className="list-group-item">{item}<button style={{float:"right"}} onClick={() => this.showList(item)} id="btn1"><input type="checkbox" checked={this.checkedStatus()} /><i className="fa fa-folder-open" aria-hidden="true"></i></button><button className="btn1" onClick={() => this.deleteObjectList(item)}><i class="fa fa-trash" aria-hidden="true"></i></button></p></div>
-     
-        )
+        <div key={index} value={index} className="card"><span className="list-group-item">{item}<button style={{float:"right"}} onClick={() => this.showList(item)} id="btn1"><input className="chck2" type="checkbox" checked={this.checkedStatus()} onClick={()=>this.checkedAndUncheckedAll}/><i className="fa fa-folder-open" aria-hidden="true"></i></button><button className="btn1" onClick={() => this.deleteObjectList(item)}><i class="fa fa-trash" aria-hidden="true"></i></button></span></div>
+      )
 
     }, this);
-
 
     const showList = this.state.taskToBeDone && this.state.taskToBeDone.map(function (item, index) {
-
-      if(index>0)    
-            return <div key={index} ><p className="list-group-item">{ item['name']  }</p ><input type="checkbox" checked={item['status']} onClick={()=>this.selectCheckbox(index)}/><button onClick={() => this.deleteTaskList(index)} id="btn1" className="btn1"><i className="fa fa-window-close" aria-hidden="true"></i></button></div>
-    }, this);
-
-
-          
     
+      if(index>0)    
+            return <div key={index} className="card"><span className="list-group-item">{ item['name']} <input className="chck1" type="checkbox" checked={item['status']} onClick={()=>this.selectCheckbox(index)}/><button onClick={() => this.deleteTaskList(index)} id="btn1" className="btn1"><i className="fa fa-window-close" aria-hidden="true"></i></button>  </span ></div>
+      
+         }, this);
+ 
     return (
-
     <div>
-        <div className="jumbotron bg-dark ">
+        <div className="jumbotron  ">
 
-          <b><h3>A Simple To Do List Using Drag and Drop</h3></b>
-
+            <b> <h3 className="text3">A Simple To Do List Using Drag and Drop</h3></b>
+       
         </div>
 
       
     <div className="container">         
        <div className="row">    
 
-      <div className="col-sm-4 card"> 
+      <div className="card col-sm-3 card1"> 
         
              <div className="inputStyle">CREATE NEW TASK LIST</div>
             
@@ -242,7 +242,7 @@ class App extends React.Component {
 
                   <div><input type="text" name="list_input" className="form-control" placeholder="Add ParentTask" required onChange={this.changeInput} value={this.state.list_input} /></div><br /><br />
                     
-                     <span className="inline">TASKS IS TO BE ADDED</span><span className="inline"> CHOOSE ANY ONE</span> <br />
+                     <span className="heading">TASKS IS TO BE ADDED</span> <br />
                   
                 </form>
 
@@ -256,16 +256,16 @@ class App extends React.Component {
       <div className="col-sm-4"></div> 
 
 
-      <div className="col-sm-4 card"> 
+      <div className="card col-sm-3 card1"> 
 
             {this.state.taskId && <div>
 
 
-              {this.state.taskId && <li className="text2  border">LIST SELECTED :: <h5 className="titleColor">{this.state.taskId}</h5> </li>}
+              {this.state.taskId && <li className="text2 ">LIST SELECTED :: <h5 className="titleColor">{this.state.taskId}</h5> </li>}
 
                   <form onSubmit={this.addValuesToObject}>
                        
-                       <input type="text" name="task_input" className="form-control" placeholder="Add Task To LIST" required onChange={this.changeInput} value={this.state.task_input} /><br />
+                       <input type="text" name="task_input" className="form-control" placeholder="Add Task To LIST" required onChange={this.changeInput} value={this.state.task_input} shadow/><br />
                   
                   </form>
 

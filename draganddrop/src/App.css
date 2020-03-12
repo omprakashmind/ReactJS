@@ -87,5 +87,124 @@
    border-radius: 10%;
    border-color: brown;
    border-width: 3ch;
+   border-radius: 39px !important;
 }
 
+.card1{
+  background-color:rgba(7, 103, 158, 0.808) !important;
+  height:600px;
+  z-index:2;
+  
+  overflow-y: auto;
+  padding: 0 !important;
+  border-radius: 1.25rem;
+}
+
+
+.inputStyle{
+  background-color: rgba(193, 207, 0, 0.788);
+    text-decoration: lawngreen;
+    text-align: center;
+    margin-bottom:10px;
+   
+    padding: 15px;
+}
+
+p:hover{
+  background-color: rgba(14, 241, 101, 0.815);
+}
+
+.list-group-item{
+  margin-bottom: 5px;
+  padding:5px !important;
+  margin-bottom: 5px;
+  overflow-y: auto;
+
+}
+.heading {
+  border-radius: 5px;
+  text-align: center;
+  border-style: double;
+  margin-bottom: 20px;
+  max-width: max-content;
+  background-color: aquamarine;
+  margin-left:50px;
+}
+
+.list2{
+  background-color: rgba(14, 241, 101, 0.815);
+}
+.text2{
+  text-align: center;
+  border-radius: 5px;
+  border-style:double;
+  list-style:none;
+  background-color: lawngreen;
+  
+}
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #ecb717 !important;
+  border-radius: .3rem;
+  
+}
+
+.text3{
+  color: rgba(189, 109, 17, 0.89)
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 9.25rem !important;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  margin-top:10px;
+}
+.btn1{
+  float:left !important;
+}
+
+.chck1{
+  float:right;
+  margin-top:6px;
+}
+.fa-window-close{
+  color:blue;
+  
+}
+
+.chck2{
+  right:18px;
+  position: relative;
+}
+#btn1{
+  border-radius: 157px;
+  border-style:none;
+}
+  list-group-item:hover{
+  color: blueviolet;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 2.25rem !important;
+}
+
+.list-group.card{
+  margin-top: 21px;
+}
